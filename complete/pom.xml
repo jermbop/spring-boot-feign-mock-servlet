@@ -13,6 +13,15 @@
         <version>1.5.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <spring-cloud.version>1.2.1.RELEASE</spring-cloud.version>
+        <java.version>1.8</java.version>
+        <spock.version>1.0-groovy-2.4</spock.version>
+        <junit.version>4.12</junit.version>
+        <groovy.version>2.4.5</groovy.version>
+        <spock.spring.version>1.0-groovy-2.4</spock.spring.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,11 +40,40 @@
             <scope>test</scope>
         </dependency>
         <!-- end::tests[] -->
-    </dependencies>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+        <!-- https://mvnrepository.com/artifact/com.netflix.feign/feign-core -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>${spring-cloud.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>${spock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-spring</artifactId>
+            <version>${spock.spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
